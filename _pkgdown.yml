@@ -1,4 +1,88 @@
-url: https://macsands.github.io/invasimapr-dev/
+url: https://b-cubed-eu.github.io/invasimapr/
 
 template:
   bootstrap: 5
+  bslib:
+    bg: "#ffffff"
+    fg: "#000000"
+    primary: "#2e8b57"
+
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+
+articles:
+  - title: Getting started
+    navbar: ~
+    contents:
+      - invasimapr
+  - title: Tutorials
+    navbar: Tutorials
+    contents:
+      - introduction
+      - step-by-step-workflow
+      - clustering-and-risk-scenarios
+      - invasion-fitness-synthesis
+      - computing-invasion-fitness
+
+reference:
+  - title: Core workflow
+    desc: Main pipeline functions, called in sequence.
+    contents:
+      - prepare_inputs
+      - simulate_invaders
+      - prepare_trait_space
+      - model_residents
+      - learn_sensitivities
+      - predict_invaders
+      - predict_establishment
+      - summarise_results
+
+  - title: Trait space and crowding
+    desc: Compute trait ordination, convex hulls, centrality and crowding.
+    contents:
+      - compute_trait_space
+      - compute_centrality_hull
+      - compute_resident_crowding
+
+  - title: Resident modelling
+    desc: Fit GLMMs to resident abundances and derive predictors.
+    contents:
+      - assemble_matrices
+      - standardise_model_inputs
+      - standardise_by_site
+      - build_model_formula
+      - prep_resident_glmm
+      - compute_site_saturation
+
+  - title: Sensitivity estimation
+    desc: Estimate trait-dependent slopes and site-varying effects.
+    contents:
+      - fit_auxiliary_residents_glmm
+      - derive_sensitivities
+      - site_varying_alpha_beta_gamma
+
+  - title: Invader prediction
+    desc: Build invader predictors and compute invasion fitness.
+    contents:
+      - build_invader_predictors
+      - compute_invasion_fitness
+      - compute_establishment_probability
+
+  - title: Summaries
+    desc: Summarise invasiveness and invasibility.
+    contents:
+      - summarise_invasiveness_invasibility
+
+  - title: Data and traits
+    desc: Retrieve trait data from external sources.
+    contents:
+      - get_trait_data
+
+authors:
+  European Union (ID 101059592):
+    href: "https://doi.org/10.3030/101059592"
+    html: "<img src='https://github.com/b-cubed-eu/invasimapr/blob/main/man/figures/eu-funded-en.png?raw=true' height=35 alt='logo of the European Union'>"
+  Mathematical Biosciences, Stellenbosch University:
+    href: "https://biomath.sun.ac.za/"
+    html: "<img src='https://github.com/b-cubed-eu/invasimapr/blob/main/man/figures/logo_sun_biomath.png?raw=true' alt='logo of Stellenbosch University'>"
