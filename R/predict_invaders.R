@@ -54,10 +54,10 @@
 #' - Site ordering is taken from `fit$meta$sites`; inputs are conformed to it.
 #'
 #' @seealso
-#' - Input assembly: \href{https://b-cubed-eu.github.io/invasimapr/reference/assemble_matrices.html}{`assemble_matrices()`}
-#' - Predictor builder: \href{https://b-cubed-eu.github.io/invasimapr/reference/build_invader_predictors.html}{`build_invader_predictors()`}
-#' - Residents GLMM: \href{https://b-cubed-eu.github.io/invasimapr/reference/fit_auxiliary_residents_glmm.html}{`fit_auxiliary_residents_glmm()`}
-#' - Sensitivities: \href{https://b-cubed-eu.github.io/invasimapr/reference/learn_sensitivities.html}{`learn_sensitivities()`}
+#' [assemble_matrices()],
+#' [build_invader_predictors()],
+#' [fit_auxiliary_residents_glmm()],
+#' [learn_sensitivities()]
 #'
 #' @examples
 #' \dontrun{

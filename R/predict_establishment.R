@@ -115,8 +115,10 @@ predict_establishment = function(
 
   AI = switch(
     as.character(option),
-               D = if (!is.null(fit$sensitivities$site_alpha)) fit$sensitivities$site_alpha$alpha_is else NULL,
-               NULL)
+    "D" = if (!is.null(fit$sensitivities$site_alpha))
+      fit$sensitivities$site_alpha$alpha_is else NULL,
+    NULL
+  )
 
   # --- Compute invasion fitness λ ----------------------------------------------
   fin = compute_invasion_fitness(

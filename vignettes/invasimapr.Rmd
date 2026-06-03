@@ -1,0 +1,105 @@
+---
+title: "Getting started with invasimapr"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with invasimapr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE
+)
+```
+
+## Overview
+
+invasimapr is an R package to assess species and trait invasiveness and site
+invasibility by visualising trait dispersion and computing invasion fitness.
+
+The package implements a network invasibility framework that decomposes
+invasion fitness into three components:
+
+- **Abiotic suitability** ($r^{(z)}_{is}$): how well the environment at
+  site $s$ suits invader $i$.
+- **Niche crowding** ($C^{(z)}_{is}$): how much functional overlap invader $i$
+  has with the resident community at site $s$.
+- **Resident competition** ($S^{(z)}_{is}$): how saturated the resident
+  community is at site $s$.
+
+## Installation
+
+Install the development version from GitHub:
+
+```{r install}
+# install.packages("remotes")
+remotes::install_github("macSands/invasimapr-dev")
+```
+
+## Workflow
+
+The core workflow consists of eight steps, each returning an updated
+`invasimapr_fit` container:
+```{r workflow}
+library(invasimapr)
+
+# Step 1: Prepare inputs from occurrence, trait and environmental data
+fit <- prepare_inputs(
+  occ_long   = my_occurrences,
+  trait_wide  = my_traits,
+  env_wide    = my_environment
+)
+
+# Step 2: Simulate hypothetical invader profiles
+fit <- simulate_invaders(fit, n_inv = 50, method = "columnwise")
+
+# Step 3: Trait space and crowding
+fit <- prepare_trait_space(fit)
+
+# Step 4: Model resident abundances
+fit <- model_residents(fit)
+
+# Step 5: Learn trait-dependent sensitivities
+fit <- learn_sensitivities(fit)
+
+# Step 6: Predict invader predictors
+fit <- predict_invaders(fit)
+
+# Step 7-8: Compute invasion fitness and establishment probability
+fit <- predict_establishment(fit, option = "C")
+
+# Summarise invasiveness and invasibility
+fit <- summarise_results(fit)
+```
+
+## Key functions
+
+| Function | Purpose |
+|---|---|
+| `prepare_inputs()` | Assemble community, trait and environmental matrices |
+| `simulate_invaders()` | Generate hypothetical invader trait profiles |
+| `prepare_trait_space()` | Compute trait space, convex hull, and crowding |
+| `model_residents()` | Fit GLMMs to resident abundance |
+| `learn_sensitivities()` | Estimate trait-dependent sensitivity slopes |
+| `predict_invaders()` | Project invaders into the resident model space |
+| `predict_establishment()` | Compute invasion fitness and map to probability |
+| `summarise_results()` | Summarise invasiveness and invasibility |
+
+## Further reading
+
+For detailed tutorials with real data, see the package articles:
+
+- [Introduction](../articles/introduction.html)
+- [Step-by-step Workflow](../articles/step-by-step-workflow.html)
+- [Clustering and risk scenarios](../articles/clustering-and-risk-scenarios.html)
+- [Invasion fitness synthesis](../articles/invasion-fitness-synthesis.html)
+- [Computing invasion fitness](../articles/computing-invasion-fitness.html)
+
+## Acknowledgments
+
+This software was developed with funding from the European Union's Horizon
+Europe Research and Innovation Programme under grant agreement ID No
+[101059592](https://doi.org/10.3030/101059592).

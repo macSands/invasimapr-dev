@@ -139,20 +139,14 @@ compute_centrality_hull = function(Q_res,
     hull_df = data.frame(tr1 = H_xy$tr1, tr2 = H_xy$tr2)
 
     if (nrow(I)) {
-      if (requireNamespace("sp", quietly = TRUE)) {
-        in_hull_I = sp::point.in.polygon(I$tr1, I$tr2, H_xy$tr1, H_xy$tr2) > 0
-      } else if (requireNamespace("sf", quietly = TRUE)) {
-        poly = sf::st_polygon(list(as.matrix(H_xy)))
-        in_hull_I = as.logical(
-          sf::st_within(
-            sf::st_as_sf(I, coords = c("tr1","tr2"), crs = NA),
-            sf::st_sfc(poly),
-            sparse = FALSE
-          )
+      poly <- sf::st_polygon(list(as.matrix(H_xy)))
+      in_hull_I <- as.logical(
+        sf::st_within(
+          sf::st_as_sf(I, coords = c("tr1", "tr2"), crs = NA),
+          sf::st_sfc(poly),
+          sparse = FALSE
         )
-      } else {
-        in_hull_I = rep(NA, nrow(I))  # no geometry backend available
-      }
+      )
     }
   } else if (nrow(I)) {
     in_hull_I = rep(NA, nrow(I)) # cannot define a hull with < 3 points

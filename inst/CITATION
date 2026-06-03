@@ -1,0 +1,8 @@
+bibentry(
+  bibtype  = "Manual",
+  title    = "invasimapr: Workflow to Visualise Trait Dispersion and Assess Invasibility",
+  author   = person("Sandra", "MacFadyen"),
+  year     = "2026",
+  url      = "https://github.com/macSands/invasimapr-dev",
+  note     = paste("R package version", meta$Version)
+)

@@ -1,22 +1,4 @@
-#' Learn sensitivities (alpha_i, beta_i, theta_i/gamma_i) and optional site-varying alpha_is, Gamma_is
-#'
-#' Fits an auxiliary GLMM on **resident** data to estimate invader-level
-#' sensitivities to crowding and saturation (alpha_i, beta_i), and abiotic conversion
-#' slopes (theta_i or gamma_i), with optional **site-varying** random slopes that yield
-#' per-site adjustments (alpha_is, Gamma_is). Results are written into the
-#' `fit$sensitivities` slot of an [`invasimapr_fit`] object for downstream
-#' invasion-fitness and establishment steps.
-#'
-#' @param fit An object of class `invasimapr_fit` produced by
-#'   [`prepare_inputs()`] / [`assemble_matrices()`], containing resident
-#'   matrices (`r_js_z`, `C_js_z`, `S_js_z`), trait-space structures (`Q_res`,
-#'   `Q_inv`), and resident community layout (`inputs$comm_res`).
-#' @param use_site_random_slopes Logical; if `TRUE`, the auxiliary model is fit
-#'   with site-level random slopes for the abiotic and crowding terms, enabling
-#'   estimation of site-varying alpha_is and Gamma_is when supported by the data.
-#'   Defaults to `TRUE`.
-#' @param lrt Logical; if `TRUE`, compute Wald/LRT summaries for key contrasts
-#'   (e.g., trait-varying vs global slopes) to guide model c#' Learn sensitivities (alpha_i, beta_i, theta_i / gamma_i) and optional site effects
+#' Learn sensitivities (alpha_i, beta_i, theta_i / gamma_i) and optional site effects
 #'
 #' @description
 #' Fits an auxiliary GLMM on resident data to estimate invader-level sensitivities
@@ -26,11 +8,11 @@
 #' (\eqn{\alpha_{is}}, \eqn{\Gamma_{is}}).
 #'
 #' Results are written into the `fit$sensitivities` slot of an
-#' \link{new_invasimapr_fit} object for downstream invasion-fitness and
+#' [invasimapr_fit][new_invasimapr_fit] object for downstream invasion-fitness and
 #' establishment calculations.
 #'
-#' @param fit An object produced by \link{prepare_inputs} and
-#'   \link{assemble_matrices}, containing resident predictor matrices
+#' @param fit An object produced by [prepare_inputs()] and
+#'   [assemble_matrices()], containing resident predictor matrices
 #'   (`r_js_z`, `C_js_z`, `S_js_z`), trait-space structures (`Q_res`, `Q_inv`),
 #'   and the resident community layout (`inputs$comm_res`).
 #' @param use_site_random_slopes Logical; if `TRUE`, the auxiliary model includes
@@ -44,15 +26,15 @@
 #' \strong{Workflow}
 #' \enumerate{
 #'   \item Fit an auxiliary GLMM on resident responses using
-#'         \link{fit_auxiliary_residents_glmm}, optionally including site-level
+#'         [fit_auxiliary_residents_glmm()], optionally including site-level
 #'         random slopes for \eqn{r_z} and \eqn{C_z}.
 #'   \item Convert GLMM coefficients to sensitivities
 #'         (\eqn{\alpha_i}, \eqn{\beta_i}, \eqn{\theta_i} or \eqn{\gamma_i}) using
-#'         \link{derive_sensitivities}, returning signed and unsigned variants
+#'         [derive_sensitivities()], returning signed and unsigned variants
 #'         plus inference summaries.
 #'   \item When supported, extract site-varying effects
 #'         (\eqn{\alpha_{is}}, \eqn{\Gamma_{is}}) via
-#'         \link{site_varying_alpha_beta_gamma}.
+#'         [site_varying_alpha_beta_gamma()].
 #' }
 #'
 #' The resulting components are stored in `fit$sensitivities`, including:
@@ -66,11 +48,11 @@
 #'   `fit$sensitivities` list.
 #'
 #' @seealso
-#' \link{prepare_inputs},
-#' \link{assemble_matrices},
-#' \link{fit_auxiliary_residents_glmm},
-#' \link{derive_sensitivities},
-#' \link{site_varying_alpha_beta_gamma}
+#' [prepare_inputs()],
+#' [assemble_matrices()],
+#' [fit_auxiliary_residents_glmm()],
+#' [derive_sensitivities()],
+#' [site_varying_alpha_beta_gamma()]
 #'
 #' @examples
 #' \dontrun{

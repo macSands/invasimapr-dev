@@ -52,7 +52,7 @@ site_varying_alpha_beta_gamma = function(fit_coeffs, Q_inv, sites, inv_ids,
   slope_C_i = stats::setNames(as.numeric(slope_C_i), inv_ids)
 
   # 2) Site random slopes
-  re_site = try(ranef(fit_coeffs)$cond$site, silent = TRUE)
+  re_site = try(glmmTMB::ranef(fit_coeffs)$cond$site, silent = TRUE)
   notes = character()
   if (inherits(re_site, "try-error")) {
     delta_C_s = stats::setNames(rep(0, length(sites)), sites)

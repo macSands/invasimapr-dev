@@ -39,8 +39,7 @@
 #'   diversity summaries.
 #' @param make_plots Logical. If `TRUE`, generate quick diagnostic plots.
 #'
-#' @importFrom dplyr %>% distinct select arrange group_by summarise mutate
-#'   left_join relocate
+#' @importFrom dplyr %>% distinct select arrange group_by summarise mutate left_join relocate
 #' @importFrom tidyr pivot_wider
 #' @importFrom tibble rownames_to_column as_tibble
 #' @importFrom stats setNames

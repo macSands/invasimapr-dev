@@ -31,8 +31,8 @@
 #' @param k Integer embedding dimension for PCoA; default 2.
 #' @param kde_n Integer grid size for 2D kernel density estimation (per axis). Default `100`.
 #' @param pad_prop Numeric padding proportion added to the plotting range on each axis. Default `0.10` (10%).
-#' @param highlight_level Numeric in (0,1]; draws a bold contour at this proportion
-#'   of the maximum density (e.g., `0.5`=50% of max). Set `NA` to skip.
+#' @param do_dend Logical. If `TRUE`, include a trait-distance dendrogram in the
+#'   trait-space visualisation. Default `TRUE`.
 #'
 #' @details
 #' **Pipeline**

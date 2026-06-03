@@ -5,7 +5,44 @@
 #' @name utils_internal
 #' @keywords internal
 #' @aliases new_invasimapr_fit .standardise_df .scale_like .row_z
+#' @importFrom stats kmeans
+#' @importFrom utils URLencode tail
 NULL
+
+# -- Silence R CMD check NOTEs for NSE / tidyverse column references ----------
+utils::globalVariables(c(
+
+  # assemble_matrices
+  "site", "spp_rich",
+
+  # compute_centrality_hull
+  "tr1", "tr2", "grp", "centrality", "in_hull", "d_md", "id", "rank_val",
+
+
+  # compute_establishment_probability
+  "val", "invader", "val_f",
+
+
+  # compute_resident_crowding
+  "C_mean",
+
+  # compute_invasion_fitness
+  "make_lambda_long",
+
+  # fit_auxiliary_residents_glmm
+  "species",
+
+  # get_trait_data
+  "OrigValueStr", "TraitName", "trait", "value",
+
+  # prep_resident_glmm
+  "abundance",
+
+  # predict_invaders (also uses 'invader')
+
+  # summarise_invasiveness_invasibility (also uses 'x', 'y')
+  "x", "y"
+))
 
 new_invasimapr_fit = function(x = list()) {
   class(x) = unique(c("invasimapr_fit", class(x)))

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "invasimapr: Workflow to Visualise Trait Dispersion and Assess Invasibility"
+version: 0.1.0
+abstract: >-
+  Tools to assess species and trait invasiveness and site invasibility
+  by visualising trait dispersion and computing invasion fitness.
+authors:
+  - family-names: "MacFadyen"
+    given-names: "Sandra"
+    email: "macfadyen@sun.ac.za"
+    orcid: "https://orcid.org/0000-0002-5316-440X"
+license: MIT
+repository-code: "https://github.com/macSands/invasimapr-dev"
+url: "https://macsands.github.io/invasimapr-dev/"
+keywords:
+  - r
+  - rstats
+  - r-package
+  - invasive-species
+  - invasibility
+  - trait-dispersion
+  - biodiversity
+  - b-cubed

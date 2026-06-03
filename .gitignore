@@ -1,6 +1,12 @@
 .Rproj.user
 .Rhistory
 .RData
+.Ruserdata
 .httr-oauth
-.DS_Store
 .quarto
+docs/
+inst/doc
+
+# Mac OS
+.DS_Store
+docs

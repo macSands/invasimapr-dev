@@ -314,7 +314,12 @@ get_trait_data = function(
     }
   }
 
-  if (isTRUE(preview) && inherits(img_rgba, "magick-image")) print(img_rgba)
+
+  if (isTRUE(preview) && inherits(img_rgba, "magick-image") &&
+      interactive()) {
+    grDevices::plot.new()
+    graphics::plot(img_rgba)
+  }
 
   palette = if (do_palette && inherits(img_rgba, "magick-image")) get_image_palette_local(img_rgba, n = n_palette) else NA
 
