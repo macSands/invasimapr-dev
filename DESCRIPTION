@@ -13,7 +13,7 @@ Description: R package to assess species and trait invasiveness and site
     invasibility by visualising trait dispersion and computing invasion fitness.
 License: MIT + file LICENSE
 URL: https://github.com/macSands/invasimapr-dev,
-    https://macsands.github.io/invasimapr-dev/
+    https://b-cubed-eu.github.io/invasimapr/
 BugReports: https://github.com/macSands/invasimapr-dev/issues
 Imports:
     cluster,

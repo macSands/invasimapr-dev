@@ -19,11 +19,11 @@ articles:
   - title: Tutorials
     navbar: Tutorials
     contents:
-      - introduction
-      - step-by-step-workflow
-      - clustering-and-risk-scenarios
-      - invasion-fitness-synthesis
-      - computing-invasion-fitness
+      - articles/introduction
+      - articles/step-by-step-workflow
+      - articles/clustering-and-risk-scenarios
+      - articles/invasion-fitness-synthesis
+      - articles/computing-invasion-fitness
 
 reference:
   - title: Core workflow
