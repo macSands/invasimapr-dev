@@ -13,3 +13,4 @@
 ^xxx-fix-tutorials$
 ^vignettes/articles$
 ^HOW-TO-COMPLETE-SETUP\.md$
+inst/extdata/climate

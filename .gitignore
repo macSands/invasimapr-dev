@@ -54,6 +54,9 @@ rsconnect/
 # built vignettes
 inst/doc
 
+# Large data files (downloaded at runtime by vignettes)
+inst/extdata/climate/
+
 # Mac OS
 .DS_Store
 docs
