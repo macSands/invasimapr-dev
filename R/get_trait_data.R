@@ -317,7 +317,6 @@ get_trait_data = function(
 
   if (isTRUE(preview) && inherits(img_rgba, "magick-image") &&
       interactive()) {
-    grDevices::plot.new()
     graphics::plot(img_rgba)
   }
 

@@ -90,13 +90,10 @@ fit <- summarise_results(fit)
 
 ## Further reading
 
-For detailed tutorials with real data, see the package articles:
-
-- [Introduction](../articles/introduction.html)
-- [Step-by-step Workflow](../articles/step-by-step-workflow.html)
-- [Clustering and risk scenarios](../articles/clustering-and-risk-scenarios.html)
-- [Invasion fitness synthesis](../articles/invasion-fitness-synthesis.html)
-- [Computing invasion fitness](../articles/computing-invasion-fitness.html)
+For detailed tutorials with real data, see the package articles on the
+[documentation website](https://b-cubed-eu.github.io/invasimapr/):
+Introduction, Step-by-step Workflow, Clustering and risk scenarios,
+Invasion fitness synthesis, and Computing invasion fitness.
 
 ## Acknowledgments
 

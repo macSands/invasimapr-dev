@@ -272,7 +272,6 @@ compute_trait_space = function(traits_res,
       )
     }
     if (!is.null(dend_plot) && interactive()) {
-      grDevices::plot.new()
       graphics::plot(dend_plot)
     }
   }
